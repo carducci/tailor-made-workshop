@@ -1,46 +1,59 @@
-# [Architectural Style Name]
+# [short title of problem and solution]
 
-[TOC]
+- Status: [Proposed | rejected | accepted | deprecated | - | superseded by [ADR](adr.md)] <!-- optional -->
+- Deciders: [list everyone involved in the decision] <!-- optional -->
+- Date: [yyyy-mm-dd when the decision was last updated]
 
-## Introduction
+Technical Story: [description | ticket/issue URL] <!-- optional -->
 
-The purpose of this document is to describe the architecture of XYZ System at a high level, outlining the architectural governing principles, why they were selected, and links to dive deeper into each element.
+## Context and Problem Statement
 
-## Summary of Governing Principles
+- [Describe the context and problem statement, e.g., in free form using two or three sentences. You may want to articulate the problem in the form of a question.]
 
-* [Constraint 1 - brief description and link to CDR]
-* [Constraint 2 - brief description and link to CDR]
-* … <!-- numbers of drivers can vary -->
+## Decision Drivers
 
-## Motivation
+- [driver 1, e.g., a force, facing concern, ...]
+- [driver 2, e.g., a force, facing concern, ...]
+- ... <!-- number of drivers can vary -->
 
-[Why are we adopting this architectural style? What problems does it solve? Why does this matter?]
+## Considered Options
 
-### Business-Critical Architectural Capabilities
+- [[option 1]]
+- [[option 2]]
+- [[option 3]]
 
-[What has been defined as the business-critical capabilities? Says who? Who has authority here? Cite your sources. How does this architectural style deliver these?]
+## Decision Outcome
 
-### Important Architectural Capabilities  <!-- optional -->
+- Chosen option: "[[option 1]]", because [justification e.g., only option, which meets k.o. criterion decision driver | which resolves force |... | comes out best (see below)].
 
-[What has been defined as the important capabilities? Says who? Who has authority here? Cite your sources. How does this architectural style deliver these?]
+## Positive Consequences
 
-### Notable Architectural Capabilities  <!-- optional -->
+- [e.g., improvement of quality attribute satisfaction, follow-up decisions required, ...]
 
-[What has been defined as the notable capabilities? Says who? Who has authority here? Cite your sources. How does this architectural style deliver these?]
+## Negative Consequences
 
-### Nice-To-Have Architectural Capabilities <!-- optional -->
+- [e.g., compromising quality attribute, follow-up decisions required, ...]
 
-[What has been defined as the "nice-to-have" capabilities? Says who? Who has authority here? Cite your sources. How does this architectural style deliver these?]
+## Pros and Cons of the Options
 
-## Scope <!-- optional -->
+### [[Option 1]]
 
-[What is the scope of this style? Where MUST it be applied, where SHOULD it be applied, Are there alternative architectural styles? If so, for whom?]
+- [example | description | pointer to more information | ...]
+- Good: because [argument a]
+- Good: because [argument b]
+- Bad: because [argument c]
+- Bad: because [argument d]
 
-## High-Level Overview
+### [[Option 2]]
 
-[Describe this architecture at a high level, what does implementation look like? Diagrams are useful here.]
+- [example | description | pointer to more information | ...]
+- Good: because [argument a]
+- Good: because [argument b]
+- Bad: because [argument c]
+- Bad: because [argument d]
 
-## Links <!-- optional -->
+## Links
 
-* [Link to anything relevant not already linked]
-* … <!-- numbers of links can vary -->
+- [link type] [link to ADR]
+- [link type] [link to implementation guidance]
+- [link type] [link to further reading]
