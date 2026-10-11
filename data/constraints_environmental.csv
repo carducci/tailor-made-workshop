@@ -1,0 +1,8 @@
+constraint,formal_name,description
+Automated Architecture Governance,Governance,
+Bulkheads & Circuit Breakers,Inter-component coordination,
+Development Environment Isolation,Practice,
+Distributed Logging & Tracing,Practice,
+High Operational Automation,Practice,
+Loose Coupling between standalone components,Governance,
+Service Discovery & Routing,Infrastructure,

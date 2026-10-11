@@ -1,0 +1,463 @@
+constraint,capability,dominant,class,behavior,modifier,notes
+Persistent-Queue Messaging,Integration,,Async Communication,Average,2.5,Queue-based messaging introduces a common integration format and schema improving overall system integration.
+Persistent-Queue Messaging,Agility,,Async Communication,Average,-0.5,
+Persistent-Queue Messaging,Elasticity,,Async Communication,Average,1,"Queue messaging supports elastic workloads, however this may be constrained by available event processors"
+Persistent-Queue Messaging,Performance,,Async Communication,Average,3.5,"Queue-based messaging is asynchronous, meaning services don't wait for a response immediately after sending a request. This asynchrony can reduce latency and improve responsiveness and multiple processors may consume the same queue."
+Persistent-Queue Messaging,Interoperability,,Async Communication,Average,2,Queue-based messaging introduces a common integration format and schema improving component interoperability.
+Persistent-Queue Messaging,Fault-tolerance,,Async Communication,Average,1.5,"While some queues are volatile, a persistent queue has a storage mechanism to avoid data loss in the event of a failure or crash."
+Persistent-Queue Messaging,Workflow,,Async Communication,Average,2.5,The async nature of queues improve handling of workflow jobs.
+Persistent-Queue Messaging,Abstraction,,Async Communication,Average,1,Messaging generally introduces a layer of abstraction (although tight coupling is still possible). This capability may be improved with additional constraints.
+Persistent-Queue Messaging,Configurability,,Async Communication,Average,1,"Queue behavior and client behavior may be modified, slightly improving overall system configurability."
+Persistent-Queue Messaging,Scalability,,Async Communication,Average,1,Queues introduce a scalable component in the system which slightly improves overall system scalability.
+Persistent-Queue Messaging,Testability,,Async Communication,Average,-1,End-to-end testing and integration testing are both more difficult to test with this constraint.
+Pub-Sub Messaging,Cost,,Async Communication,Average,1,"Pub-sub can reduce costs by decoupling system components, potentially reducing tight integrations and allowing components to be developed, scaled, or replaced independently."
+Pub-Sub Messaging,Performance,,Async Communication,Average,2,"By allowing asynchronous message delivery, pub-sub can help systems handle traffic spikes and distribute load more efficiently improving overall system performance."
+Pub-Sub Messaging,Integration,,Async Communication,Average,2.5,The decoupled nature of pub-sub eases integration of diverse components or services without direct dependencies.
+Pub-Sub Messaging,Interoperability,,Async Communication,Average,2,Different systems or software can communicate more seamlessly using common message protocols in a pub-sub model.
+Pub-Sub Messaging,Workflow,,Async Communication,Average,4,Pub-sub enables event-driven workflows where specific events trigger specific actions across decoupled services.
+Pub-Sub Messaging,Abstraction,dominant,Async Communication,Average,3.5,"Publishers and subscribers interact through message topics or channels, abstracting away the details of direct communication."
+Pub-Sub Messaging,Evolvability,,Async Communication,Average,2.5,"New components can be added or existing ones can be modified without affecting others, supporting system evolution."
+Pub-Sub Messaging,Fault-tolerance,,Async Communication,Average,2.5,Decoupled services in pub-sub can fail independently without bringing down the entire system.
+Pub-Sub Messaging,Scalability,,Async Communication,Average,2,Pub-sub architectures can handle a growing number of messages or users by distributing messages across multiple subscriber
+Pub-Sub Messaging,Configurability,,Async Communication,Average,0.5,The loose coupling allows for greater flexibility in configuring or re-configuring system components.
+Pub-Sub Messaging,Elasticity,,Async Communication,Average,0.5,"As the demand grows, pub-sub systems can expand easily by adding more publishers or subscribers."
+Pub-Sub Messaging,Agility,,Async Communication,Average,-0.5,
+Pub-Sub Messaging,Simplicity,,Async Communication,Average,-2,"Introducing a pub-sub model can add complexity as systems need to manage topics, subscriptions, and potential message delivery issues including multiple deliveries of the same message."
+Pub-Sub Messaging,Testability,,Async Communication,Average,1,Ensuring that messages are published and consumed correctly in a distributed pub-sub system can complicate testing scenarios.
+Queue Messaging,Integration,,Async Communication,Average,2.5,
+Queue Messaging,Agility,,Async Communication,Average,-1,
+Queue Messaging,Elasticity,,Async Communication,Average,1,
+Queue Messaging,Performance,,Async Communication,Average,3.5,
+Queue Messaging,Interoperability,,Async Communication,Average,2,
+Queue Messaging,Fault-tolerance,,Async Communication,Average,-1,
+Queue Messaging,Workflow,,Async Communication,Average,2.5,
+Queue Messaging,Abstraction,,Async Communication,Average,1,
+Queue Messaging,Configurability,,Async Communication,Average,1,
+Queue Messaging,Scalability,,Async Communication,Average,1,
+Queue Messaging,Testability,,Async Communication,Average,-1,
+All Data stored in-memory,Performance,,Component Constraint,Arithmetic,3,This constraint eliminates both network I/O and database I/O thus massively improving performance.
+All Data stored in-memory,Scalability,,Component Constraint,Arithmetic,4,"By removing the database and external I/O as scalability bottlenecks, scalability becomes effectively infinite."
+All Data stored in-memory,Deployability,,Component Constraint,Arithmetic,,This constraint reduces deployability as deployments force a system-wide reload of data.
+All Data stored in-memory,Configurability,,Component Constraint,Arithmetic,,This constraint tends to reduce configurability as data structures are typically fixed.
+All Data stored in-memory,Agility,,Component Constraint,Arithmetic,,
+All Data stored in-memory,Fault-tolerance,,Component Constraint,Arithmetic,-1.75,This constraint introduces new failure conditions that can be difficult to manage. Crashes may result in lost state.
+High Operational Automation,Agility,,Environment,Arithmetic,,High operational automation correlates with high maturity and automation elsewhere in the build/deployment pipeline. High operational automation also allows for lower risk deployments due to deployment management strategies it enables.
+All Data stored in-memory,Testability,,Component Constraint,Arithmetic,-1,"This constraint significantly weakens testability when part of a distributed architecture. Although core logic may be easy to test, various failure conditions such as data collisions and race conditions are extremely difficult to test for at design/build time."
+Highly Decoupled Components,Agility,,Component Constraint,Arithmetic,1,"Extreme decoupling allows teams to develop, modify, and innovate on individual services without being hindered by dependencies, facilitating rapid response to business needs."
+Highly Decoupled Components,Deployability,,Component Constraint,Arithmetic,2,"With each service being independent, updates or changes can be deployed to one service without affecting others, enabling continuous delivery and faster release cycles."
+Highly Decoupled Components,Integration,,Component Constraint,Arithmetic,,Decoupled services can be easily integrated with various systems and platforms since they expose defined interfaces and aren't tightly bound to other services
+Highly Decoupled Components,Interoperability,,Component Constraint,Arithmetic,,"Services designed with decoupling in mind can interact with different software components, regardless of the technologies or platforms they use, due to clear contracts and interfaces."
+Highly Decoupled Components,Testability,,Component Constraint,Arithmetic,2,"Testing becomes more straightforward as each service can be validated in isolation, reducing the complexity and scope of testing."
+Highly Decoupled Components,Performance,,Component Constraint,Arithmetic,,
+Highly Decoupled Components,Fault-tolerance,,Component Constraint,Arithmetic,2,"The shared-nothing aspect of this constraint ensures failures in one service do not necessarily propagate to others; hence, the overall system can remain largely operational even if one component encounters issues."
+Highly Decoupled Components,Elasticity,,Component Constraint,Arithmetic,1,
+Highly Decoupled Components,Scalability,,Component Constraint,Arithmetic,1,"Individual services can be scaled independently based on their own demand, providing more efficient resource utilization and system responsiveness."
+Highly Decoupled Components,Workflow,,Component Constraint,Arithmetic,-1,Coordinating workflows across multiple decoupled services can introduce complexities in ensuring data consistency and managing inter-service communication.
+Highly Decoupled Components,Cost,,Component Constraint,Arithmetic,-2,"Highly decoupled services may lead to resource overhead, with each service potentially requiring its own runtime, storage, and infrastructure, increasing operational costs."
+Highly Decoupled Components,Simplicity,,Component Constraint,Arithmetic,-3,"While each service might be simple in isolation, the system as a whole can become complex due to the challenges of managing numerous distributed services, data consistency, and network communication."
+Separation of Concerns,Cost,,Component Constraint,Arithmetic,1,Development and maintenance costs are reduced by adding this level of modularity to code. Developers may develop deep domain expertise in business logic (or subset of the business logic) which further reduces cost.
+Separation of Concerns,Testability,,Component Constraint,Arithmetic,1,This constraint further reduces testing scope for any given change.
+Separation of Concerns,Agility,,Component Constraint,Arithmetic,0.5,"Agility is improved as the code generally has better boundaries, reduced testing scope, and potentially change scope."
+Separation of Concerns,Simplicity,,Component Constraint,Arithmetic,1,"This constraint generally improves simplicity of development and maintenance of the code. It is well-defined way to develop software, and this constraint improves understandability of the system components as well."
+Separation of Concerns,Evolvability,,Component Constraint,Arithmetic,0.5,Evolvability is slightly improved as a consequence of the factors detailed above.
+Technical Partitioning,Agility,,Module Partitioning,Arithmetic,0.5,
+Technical Partitioning,Cost,,Module Partitioning,Arithmetic,2.5,"This constraint introduces some structure in terms of how components of the system are organized. In this case components are grouped by their technical categories. As the depiction of the abstract style indicates, usually these are along the line of UI/Presentation, Business logic, persistence, and database but this constraint can apply to both monolithic and distributed topologies.</p>
+
+<p>Generally layers are consider either open or closed. Closed layers abstract any layers below the closed layer - meaning they must act as an intermediary. Open layers are free to be bypassed when it makes sense (the sinkhole antipattern defines a scenario where the layers don’t apply any meaningful changes or validation on the data as it passes through a layer)."
+Technical Partitioning,Testability,,Module Partitioning,Arithmetic,0.5,"Because this constraint add some structure to our software components, testing scope becomes better defined as do interfaces between layers."
+Technical Partitioning,Abstraction,,Module Partitioning,Arithmetic,-0.5,"Because one layer must interact with another, often this results in better interfaces and abstractions being put in place. As a result, generally this constraint slightly improves abstraction within the system."
+Technical Partitioning,Deployability,,Module Partitioning,Arithmetic,-1,"Deployability is degraded here, whether this constraint is applied to a monolithic or distributed technically partitioned system. Generally any single change requires modifications to all layers which increases testing and regression-testing scope and reduces velocity while increasing deployment risk."
+Technical Partitioning,Configurability,,Module Partitioning,Arithmetic,-0.5,Technical partitioning might introduce tight coupling between different parts of the application. This can make it difficult to change or configure one part without affecting others.
+Technical Partitioning,Evolvability,,Module Partitioning,Arithmetic,-0.5,"The large change scope, reduced deployment velocity, and increased change risk also adversely affects evolvability. The risk surface area is much larger than in domain-partitioned systems."
+Near-Cache for in-memory overflow,Performance,,Component Constraint,Arithmetic,-0.5,
+Near-Cache for in-memory overflow,Scalability,,Component Constraint,Arithmetic,2,
+Near-Cache for in-memory overflow,Deployability,,Component Constraint,Arithmetic,,
+Near-Cache for in-memory overflow,Configurability,,Component Constraint,Arithmetic,,
+Near-Cache for in-memory overflow,Agility,,Component Constraint,Arithmetic,-0.5,
+Near-Cache for in-memory overflow,Fault-tolerance,,Component Constraint,Arithmetic,-5,
+Near-Cache for in-memory overflow,Cost,,Component Constraint,Arithmetic,1,
+Near-Cache for in-memory overflow,Testability,,Component Constraint,Arithmetic,-0.5,
+Independent Deployability,Agility,,Deployment Constraint,Arithmetic,1.5,"Independent deployability requires some rules around modularity. Clean and stable module boundaries must, therefore, exist (be it in the form of plug-in architecture, event processors connect by async processing channels, independant services, or service layers). These module boundaries in place, combined with independent build and deployment pipelines, significantly improve overall agility. To respond to change, a module can be create or modified and deployed with low overall risk to the rest of the system. Change scope remains constrained and deployment risk reduced increasing overall delivery velocity."
+Independent Deployability,Deployability,,Deployment Constraint,Arithmetic,1.5,"In the same vein of Agility, overall deployability is improved."
+Independent Deployability,Elasticity,,Deployment Constraint,Arithmetic,,Independent deployability improves component independence and improves elasticity.
+Independent Deployability,Evolvability,,Deployment Constraint,Arithmetic,1,"The independant deployability constraint enables different parts of the system to evolve at different rates. Adding or changing functionality is often as simple as a single, scoped, focused deployment."
+Independent Deployability,Scalability,,Deployment Constraint,Arithmetic,1,Independent deployability improves component independence and improves scalability.
+Independent Deployability,Cost,,Deployment Constraint,Arithmetic,1,"The capability of surgically-precise deployments reduces the overall total cost of ownership of the system. This capability is limited, however, as independant deployability typically requires additional investment in build and deployment infrastructure which incurs a cost penalty. In aggregate, the trade-offs of this constraint are a small net positive."
+Independent Deployability,Simplicity,,Deployment Constraint,Arithmetic,0.5,"Although development and management of independant build and deployment pipelines introduce complexity and require some specialized skills, once this infrastructure is in place, the system as a whole is generally easier to maintain and modify. Again, in aggregate, the trade-offs evaluate to a modest net positive."
+High Operational Automation,Elasticity,,Environment,Arithmetic,1,High operational automation enables more robust and responsive automated scaling of resources up or down as needed.
+High Operational Automation,Performance,,Environment,Arithmetic,3,"The ease of elasticity improves overall performance as needed, compensating for network overhead in some cases."
+High Operational Automation,Configurability,,Environment,Arithmetic,0.5,A consequence of investment into operational automation is configuration management as part of the deployment/operational toolchain.
+High Operational Automation,Evolvability,,Environment,Arithmetic,,The induced agility and deployability improves overall system evolvability.
+RPC API,Agility,,Integration,Max,-0.5,The difficult of changing APIs without frequent client coordination reduces overall agility.
+High Operational Automation,Deployability,,Environment,Arithmetic,0.5,High operational automation also allows for lower risk deployments due to deployment management strategies it enables.
+High Operational Automation,Fault-tolerance,,Environment,Arithmetic,1,A system with high operational automation provides more scope for managing and mitigating partial failures and recovery.
+High Operational Automation,Testability,,Environment,Arithmetic,,High operational automation correlates with high maturity and automation elsewhere in the build/deployment pipeline which improves system testability.
+High Operational Automation,Scalability,,Environment,Arithmetic,0.5,High operational automation offers some capability to scale-up resources on demand.
+Decoupled Database,Agility,,Persistence,Arithmetic,0.5,Easier deployability and the decoupled nature reduces change cost which improves change velocity.
+High Operational Automation,Simplicity,,Environment,Arithmetic,-1,This constraint requires significant investment in infrastructure and pipeline development and typically requires more complex cloud implementation.
+Client-Server,Evolvability,,front-end,Arithmetic,0.5,"By separating client concerns from server concerns, both the client and the server may evolve independantly. Furthermore, evolvability in the form of portability is incuded should multiple client implementations be requires (e.g. mobile platform specific clients)"
+Client-Server,Workflow,,front-end,Arithmetic,1,The workflow capability is modestly improved as a client may orchestrate some workflows.
+Client-Server,Agility,,front-end,Arithmetic,0.5,The independent evolvability of the client and server induce a modest amount of agility. Client-server coupling generally limit this and often coordinated updates are required.
+Client-Server,Configurability,,front-end,Arithmetic,1,"Although limited in scope, clients may store user-specific or client-specific configuration independently from the rest of the system."
+Client-Server,Deployability,,front-end,Arithmetic,1,Client and server may be deployed indepentently. Client-server coupling generally limit this and often coordinated updates are required hence this is only a modest improvement.
+Client-Server,Elasticity,,front-end,Arithmetic,1,Decoupling client and server introduces some elasticity capability.
+Client-Server,Scalability,,front-end,Arithmetic,1,Decoupling client and server allows improved independent scalability
+Client-Server,Simplicity,,front-end,Arithmetic,0.5,The client/server separation of concerns slightly improves overall system simplicity.
+Client-Server,Testability,,front-end,Arithmetic,1,The client/server separation of concerns reduces some testing scopes slightly improving overall testability.
+Client-Server,Cost,,front-end,Arithmetic,-0.5,"This constraint slightly increases development, operational, and delpoyment costs."
+Client-Server,Performance,,front-end,Arithmetic,-0.5,"Although separating client and server increase total available compute, this is typically offset by this constraint introducing network latency and overhead to most operations. Separating the client and server slightly reduces overall performance of the system."
+Client-Server,Fault-tolerance,,front-end,Arithmetic,-1.5,Typically both the client and the server must be available for normal functioning of a client-server system as well as an available network connection. This dependency reduces the overall fault-tolerance of the system (although this may be improved through additional constraints)
+Tightly-Coupled Client-Server,Evolvability,,front-end,Arithmetic,-0.5,
+Tightly-Coupled Client-Server,Workflow,,front-end,Arithmetic,1,
+Tightly-Coupled Client-Server,Agility,,front-end,Arithmetic,-0.5,
+Tightly-Coupled Client-Server,Configurability,,front-end,Arithmetic,0.5,
+Tightly-Coupled Client-Server,Deployability,,front-end,Arithmetic,-0.5,
+Tightly-Coupled Client-Server,Elasticity,,front-end,Arithmetic,1,
+Tightly-Coupled Client-Server,Scalability,,front-end,Arithmetic,1,
+Tightly-Coupled Client-Server,Simplicity,,front-end,Arithmetic,1,
+Tightly-Coupled Client-Server,Testability,,front-end,Arithmetic,0.5,
+Tightly-Coupled Client-Server,Cost,,front-end,Arithmetic,-0.5,
+Tightly-Coupled Client-Server,Performance,,front-end,Arithmetic,0.5,
+Tightly-Coupled Client-Server,Fault-tolerance,,front-end,Arithmetic,,
+Microfrontend,Evolvability,,front-end,Arithmetic,1.5,
+Microfrontend,Workflow,,front-end,Arithmetic,-0.5,
+Microfrontend,Agility,,front-end,Arithmetic,1,
+Microfrontend,Configurability,,front-end,Arithmetic,1,
+Microfrontend,Deployability,,front-end,Arithmetic,1.5,
+Microfrontend,Elasticity,,front-end,Arithmetic,,
+Microfrontend,Scalability,,front-end,Arithmetic,,
+Microfrontend,Simplicity,,front-end,Arithmetic,-0.5,
+Microfrontend,Testability,,front-end,Arithmetic,1,
+Microfrontend,Cost,,front-end,Arithmetic,-0.5,
+Microfrontend,Performance,,front-end,Arithmetic,-1,
+Microfrontend,Fault-tolerance,,front-end,Arithmetic,0.5,
+Coarse Component Granularity,Fault-tolerance,,Granularity,Average,2,"Although hampered somewhat by the larger granularity, decomposed components are generally lighter-weight and offer reduced start times eliciting improved elasticity compared to monolithic systems."
+Coarse Component Granularity,Performance,,Granularity,Average,2,Coarse-grained components generally require fewer network calls as many common functions are co-located locally within the component boundaries reducing latency and improving performance.
+Coarse Component Granularity,Elasticity,,Granularity,Average,1.5,"Although hampered by the larger granularity, decomposed components are generally lighter-weight and offer reduced start times eliciting improved elasticity compared to monolithic systems."
+Coarse Component Granularity,Testability,,Granularity,Average,1,"Breaking an application into smaller components reduces the total testing scope. Furthermore, generally components have well-defined API contracts which abstract implementation reducing complexity of integration testing across teams."
+Coarse Component Granularity,Deployability,,Granularity,Average,1.5,"A system decomposed into compents begins to pave the way for smaller-scoped deployments and partial deployments of the system. Deployments scoped to components, even coarse-grained components, reduces deployment risk and simplifies pipelines."
+Coarse Component Granularity,Scalability,,Granularity,Average,1,"Even at a coarse granularity, components may be individually scaled increasing total available compute where it is most needed."
+Coarse Component Granularity,Agility,,Granularity,Average,0.5,Decomposing a system into independent components of any granularity with thoughtful module boundaries has the potential to improve business agility. Components may be independently evolved and deployed with reduced overall testing scope.
+Coarse Component Granularity,Evolvability,,Granularity,Average,0.5,"Decomposition into components enables different parts of the system to evolve at different rates. Adding or changing functionality may often be scoped to a single component. Depending on other factors (module boundaries, coupling, system structure, etc) some changes may span multiple components, hence only a modest improvement on this capability"
+Coarse Component Granularity,Integration,,Granularity,Average,,"Decomposing as system into components is a forcing function for integration. Components must be able to communicate and work together, which generally improves this capability at the system level."
+Coarse Component Granularity,Interoperability,,Granularity,Average,,"Likewise system decomposition is generally a forcing function to decouple components, modestly enabling interoperability across components."
+Coarse Component Granularity,Workflow,,Granularity,Average,0.5,Coarse-grained components typically contain many modules and functions which modestly improve the ability for a module to orchestrate workflow behavior within a module boundary.
+Coarse Component Granularity,Configurability,,Granularity,Average,0.5,"Decomposing a system allows components to be individually configured and each component may utilize different framework versions, runtimes, languages, or platforms."
+Coarse Component Granularity,Cost,,Granularity,Average,-0.5,"Coarse granularity of components reduces total cost of ownership in terms of development time, change time, and bandwidth costs but is offset by design, development, and compute overhead involved in a distributed system."
+Coarse Component Granularity,Simplicity,,Granularity,Average,-0.5,Decomposing a system into independent components of any granularity introduces additional design and operational complexity.
+Mixed (Core Monolith/fine plugins),Evolvability,,Granularity,Average,1,Decomposition into components enables different parts of the system to evolve at different rates. Adding or changing functionality may often be scoped to a single component.
+Mixed (Core Monolith/fine plugins),Fault-tolerance,,Granularity,Average,-1.5,"Independent components of any granularity begin to reduce the operational cost of running any given component. It becomes feasible to run multiple instances of a component which reduces the risk of system-wide failures when any individual instance of a component fails. Furthermore, components generally represent only a subset of the overall system functionality which supports implementation decisions that enable the majority of the system to continue functioning."
+Mixed (Core Monolith/fine plugins),Deployability,,Granularity,Average,0.5,"A system decomposed into compents paves the way for smaller-scoped deployments and partial deployments of the system. Deployments scoped to components, reduces deployment risk and simplifies pipelines."
+Mixed (Core Monolith/fine plugins),Testability,,Granularity,Average,1.5,Breaking an application into smaller components reduces the total testing scope and fine-grained components are usually split at the bounded context reducing inter-component testing scope.
+Mixed (Core Monolith/fine plugins),Agility,,Granularity,Average,-1,Decomposing a system into independent components of any granularity with thoughtful module boundaries has the potential to improve business agility. Components may be independently evolved and deployed with reduced overall testing scope.
+Mixed (Core Monolith/fine plugins),Configurability,,Granularity,Average,1.5,"Decomposing a system allows components to be individually configured and each component may utilize different framework versions, runtimes, languages, or platforms."
+Mixed (Core Monolith/fine plugins),Integration,,Granularity,Average,-1,"Fine-grained components are generally managed by separate teams. More coordinate is required, increasing coordination costs."
+Mixed (Core Monolith/fine plugins),Workflow,,Granularity,Average,-1,
+Mixed (Core Monolith/fine plugins),Interoperability,,Granularity,Average,-1,"Fine-grained components are usually scoped to the bounded-context, this introduces interoperability challenges when communication spans domain boundaries and ubiquitious languages differ."
+Mixed (Core Monolith/fine plugins),Performance,,Granularity,Average,0.5,Fine-grained components generally require more network calls as many common functions increasing potential latency and degrading performance.
+Mixed (Core Monolith/fine plugins),Simplicity,,Granularity,Average,1,This constraint requires significant investment in infrastructure and pipeline development and typically requires more complex cloud implementation.
+Fine Component Granularity,Elasticity,,Granularity,Average,3,Decomposed components are generally lighter-weight and offer reduced start times eliciting improved elasticity compared to monolithic systems or coarse-grained components.
+Fine Component Granularity,Evolvability,,Granularity,Average,1.5,Decomposition into components enables different parts of the system to evolve at different rates. Adding or changing functionality may often be scoped to a single component.
+Fine Component Granularity,Fault-tolerance,,Granularity,Average,1,"Independent components of any granularity begin to reduce the operational cost of running any given component. It becomes feasible to run multiple instances of a component which reduces the risk of system-wide failures when any individual instance of a component fails. Furthermore, components generally represent only a subset of the overall system functionality which supports implementation decisions that enable the majority of the system to continue functioning."
+Fine Component Granularity,Deployability,,Granularity,Average,1,"A system decomposed into compents paves the way for smaller-scoped deployments and partial deployments of the system. Deployments scoped to components, reduces deployment risk and simplifies pipelines."
+Fine Component Granularity,Scalability,,Granularity,Average,2,Smaller components may be individually scaled increasing total available compute where it is most needed.
+Fine Component Granularity,Testability,,Granularity,Average,1,Breaking an application into smaller components reduces the total testing scope and fine-grained components are usually split at the bounded context reducing inter-component testing scope.
+Fine Component Granularity,Agility,,Granularity,Average,1.5,Decomposing a system into independent components of any granularity with thoughtful module boundaries has the potential to improve business agility. Components may be independently evolved and deployed with reduced overall testing scope.
+Fine Component Granularity,Configurability,,Granularity,Average,1.5,"Decomposing a system allows components to be individually configured and each component may utilize different framework versions, runtimes, languages, or platforms."
+Fine Component Granularity,Cost,,Granularity,Average,-1,
+Fine Component Granularity,Integration,,Granularity,Average,-1,"Fine-grained components are generally managed by separate teams. More coordinate is required, increasing coordination costs."
+Fine Component Granularity,Workflow,,Granularity,Average,-1,
+Fine Component Granularity,Interoperability,,Granularity,Average,-1,"Fine-grained components are usually scoped to the bounded-context, this introduces interoperability challenges when communication spans domain boundaries and ubiquitious languages differ."
+Fine Component Granularity,Performance,,Granularity,Average,-1.5,Fine-grained components generally require more network calls as many common functions increasing potential latency and degrading performance.
+Fine Component Granularity,Simplicity,,Granularity,Average,-2,This constraint requires significant investment in infrastructure and pipeline development and typically requires more complex cloud implementation.
+Medium Component Granularity,Elasticity,,Granularity,Average,2.5,Decomposed components are generally lighter-weight and offer reduced start times eliciting improved elasticity compared to monolithic systems or coarse-grained components.
+Medium Component Granularity,Fault-tolerance,,Granularity,Average,2,"Independent components of any granularity begin to reduce the operational cost of running any given component. It becomes feasible to run multiple instances of a component which reduces the risk of system-wide failures when any individual instance of a component fails. Furthermore, components generally represent only a subset of the overall system functionality which supports implementation decisions that enable the majority of the system to continue functioning."
+Medium Component Granularity,Performance,,Granularity,Average,2.5,Medium-grained components generally require fewer network calls as many common functions are co-located locally within the component boundaries reducing latency and improving performance.
+Medium Component Granularity,Deployability,,Granularity,Average,1,"A system decomposed into compents paves the way for smaller-scoped deployments and partial deployments of the system. Deployments scoped to components, reduces deployment risk and simplifies pipelines."
+Medium Component Granularity,Scalability,,Granularity,Average,1,Smaller components may be individually scaled increasing total available compute where it is most needed.
+Medium Component Granularity,Testability,,Granularity,Average,1.5,>Breaking an application into smaller components reduces the total testing scope and medium-grained components are usually split at the domain boundary reducing inter-component testing scope.
+Medium Component Granularity,Agility,,Granularity,Average,0.5,Decomposing a system into independent components of any granularity with thoughtful module boundaries has the potential to improve business agility. Components may be independently evolved and deployed with reduced overall testing scope.
+Medium Component Granularity,Evolvability,,Granularity,Average,1,Decomposition into components enables different parts of the system to evolve at different rates. Adding or changing functionality may often be scoped to a single component.
+Medium Component Granularity,Integration,,Granularity,Average,-0.5,"Medium-grained components integrate well within the domain boundary, although crossing domains may introduce challenges."
+Medium Component Granularity,Interoperability,,Granularity,Average,-0.5,"Decomposing as system into components is a forcing function for integration. Components must be able to communicate and work together, which generally improves this capability at the system level."
+Medium Component Granularity,Configurability,,Granularity,Average,1.5,"Decomposing a system allows components to be individually configured and each component may utilize different framework versions, runtimes, languages, or platforms."
+Replicated Shared Data Grid,Agility,,Synchronization,Arithmetic,-0.5,
+Medium Component Granularity,Simplicity,,Granularity,Average,0.5,
+Medium Component Granularity,Workflow,,Granularity,Average,-0.5,Medium-grained components typically contain many modules and functions grouped by domain which modestly improve the ability for a module to orchestrate workflow behavior within a module boundary.
+Monolithic Component Granularity,Simplicity,,Granularity,Average,3,"If an entire system resides within a single binary, we avoid the challenges that distributed systems face. These types of systems avoid an entire category of complexity that distributed systems introduce. The challenges that distributed systems introduce are best exemplified by the <a href=""https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing"">fallacies of distributed computing</a>. In summary, the fallacies are:</p>
+
+<ol>
+  <li>The network is reliable</li>
+  <li>Latency is zero</li>
+  <li>Bandwidth is infinite</li>
+  <li>The network is secure</li>
+  <li>Topology doesn’t change</li>
+  <li>Transport cost is zero</li>
+  <li>The network is homogeneous</li>
+</ol>
+
+<p>Basically, the fallacies describe the complexities that emerge when a system becomes distributed. In short, there is a lot less that developers have to worry about with a monolith.</p>
+
+<p>In addition, the build process is generally much simpler. It can be as simple as performing a build in an IDE.</p>
+
+<p>It is generally easier to get started building a monolithic app. We can begin to write code that creates user value without too much thought.</p>
+
+<p>Working in the monolithic codebase is also generally simpler. The entire codebase can be indexed by an IDE providing useful intellisense, there is direct visibility into every part of the system, and since everything is in a single codebase, coordinating changes can be performed in a single commit.</p>
+
+<p>Administration of a single app is also radically simplified. There is much less to monitor or manage."
+Monolithic Component Granularity,Performance,,Granularity,Average,2,"As implied by the fallacies of distributed computing, one unexpected consequence of distributed architectures is some performance penalty incurred through network latency and bandwidth. In memory calls are, thus, faster than network calls. That said, the potential benefits are limited by the available hardware to a given application (even when writing multi-threaded, high-performance code). Resources are shared and are difficult to scale out (as we can with other distributed patterns)."
+Monolithic Component Granularity,Cost,,Granularity,Average,1,A related consequence of axis of simplicity induced by this constraint is a corresponding reduction in cost. Up-front design efforts are reduced as are infrastructure requirements.
+Monolithic Component Granularity,Deployability,,Granularity,Average,-0.5,"Deployment of a monolithic binary can be as simple as copying a directory to a server or using a deploy feature in development tooling (although friends don’t let friends right-click deploy). The improvement of this capability is modest at best. We certainly can’t deploy with the same velocity of more granular architectures given the size of the deployment (the entire application, even for a small change) and the start-up time for an application degrades proportionately with the size of the code base."
+Monolithic Component Granularity,Evolvability,,Granularity,Average,-0.5,
+Monolithic Component Granularity,Testability,,Granularity,Average,0.5,"Compared with the null style, testability can be slightly improved - but only slightly. There are few–if any–external dependencies to be aware of, in theory the entire codebase can be tested with minimal coordination cost."
+Monolithic Component Granularity,Agility,,Granularity,Average,-1.25,A monolithic build artifact requires that any change require a redeployment of the entire system. Testing scope is higher and coordinating releases more difficult.
+Monolithic Component Granularity,Scalability,,Granularity,Average,-2,"This constraint introduces scalability challenges. The only available avenues towards scale revolve around either scaling up the hardware the application is running on or scaling out. The latter is severely constrained by the fact that the entire application must be replicated, not merely the handful of components responsible for the lion’s share of the load."
+Monolithic Component Granularity,Abstraction,,Granularity,Average,-2,"One key trade-off of the single, monolithic, codebase is that generally abstraction becomes a secondary concern (if at all). Without care, the code becomes tightly coupled with a high degree of connascence. Other constraints will balance this somewhat, but in the context of just this constraint, abstraction is degraded."
+Monolithic Component Granularity,Elasticity,,Granularity,Average,-3,"In the same way this constraint degrades scalability, elasticity is even more affected. Quickly responding to bursts in load become challenging as the entire application must be replicated, and the coarse granularity of the application will degrade startup times."
+Monolithic Component Granularity,Fault-tolerance,,Granularity,Average,-3,"Since the entire system resides in a single binary, fault-tolerance is adversely affected. Generally the system as a whole is healthy, or it is not. In more fine-grained architectures it’s possible for components to fail without bringing down the entire system."
+Level 1 REST API,Integration,Dominant,Integration,Max,3.5,"A Level 1 REST API provides stable URIs for resources, and potentially offers multiple representations making it easier to integrate with various components and services without frequent changes."
+Level 1 REST API,Interoperability,Dominant,Integration,Max,3,The use of resource abstraction with stable URIs along with standard protocols like HTTP ensure that different systems or components can communicate and work together seamlessly.
+Level 1 REST API,Abstraction,Dominant,Integration,Max,2,"By decoupling identity, representation, and behavior, a Level 1 REST API offers a clear separation of concerns, allowing for cleaner design and better abstraction."
+Level 1 REST API,Fault-tolerance,,Integration,Max,0.5,
+Level 1 REST API,Elasticity,,Integration,Max,0.5,
+Level 1 REST API,Deployability,,Integration,Max,0.5,"Stable URIs and resource-centric design mean that changes can be introduced without breaking existing clients, enhancing deployability."
+Level 1 REST API,Simplicity,,Integration,Max,1,"Rest offers a simple, standards-based, and well understood interface following common protocols with many client implementations available improving simplicity. This simplicity is offset by the additional up front effort of resource design and modeling."
+Level 1 REST API,Testability,,Integration,Max,0.5,"With well-defined resource endpoints, testing becomes more straightforward as each resource can be tested in isolation."
+Level 1 REST API,Agility,,Integration,Max,0.5,"Since Level 1 offers an evolvable foundation, it's easier to adapt to changes and incorporate new features or modifications, enhancing agility."
+Level 1 REST API,Performance,,Integration,Max,-0.25,"A level one REST API is stateless, optimized for coarse-graind hypermedia transport, and operates by passing resource representations back and forth. Because level 1 REST does not standardize on http verbs, caching may not be available to offset performance. These factors will negatively impact performance."
+Level 2 REST API,Integration,Dominant,Integration,Max,4,A Level 2 REST API provides stable URIs for resources along with standardized request methods and respons code. APIs will potentially offers multiple representations making it easier to integrate with various components and services without frequent changes.
+Level 2 REST API,Interoperability,Dominant,Integration,Max,3.5,The use of resource abstraction with stable URIs along with fully following standard protocols like HTTP ensure that different systems or components can communicate and work together seamlessly.
+Level 2 REST API,Agility,,Integration,Max,1,"By decoupling identity, representation, and behavior, a Level 2 REST API offers a clear separation of concerns, allowing for cleaner design and better abstraction."
+Level 2 REST API,Abstraction,Dominant,Integration,Max,3,"Stable URIs, adoption of standard request methods and response codes, and resource-centric design mean that changes can be introduced without breaking existing clients, enhancing deployability."
+Level 2 REST API,Deployability,,Integration,Max,1,REST follows standard protocols with common and widely available tooling making the interface more familiar and straightforward to understand and use.
+Level 2 REST API,Fault-tolerance,,Integration,Max,1,"By standardizing on HTTP verbs, network failures are easier to recover as clients are free to retry safe and/or idempotent requests. Also, by standardizing on response codes, a client may better recover from request failures."
+Level 2 REST API,Simplicity,,Integration,Max,1,"Rest offers a simple, standards-based, and well understood interface following common protocols with many client implementations available improving simplicity. This simplicity is offset by the additional up front effort of resource design and modeling."
+Level 2 REST API,Testability,,Integration,Max,0.5,"With well-defined resource endpoints, testing becomes more straightforward as each resource can be tested in isolation."
+Level 2 REST API,Elasticity,,Integration,Max,0.5,
+Level 2 REST API,Performance,,Integration,Max,-0.25,"A level one REST API is stateless, optimized for coarse-graind hypermedia transport, and operates by passing resource representations back and forth. These factors will negatively impact performance."
+RPC API,Configurability,,Integration,Max,,"An API provides configurability through versioned contracts, the potential for more fine-grained control over signatures and payloads, and potentially content-negotiation."
+RPC API,Fault-tolerance,,Integration,Max,0.5,"Networked API calls enable real-time routing to API endpoints. Such calls may often be load balanced and load-balancers may be aware of API instance health. When API interactions are semantically safe and/or idempotent, clients are free to retry failed requests. RPC APIs may lack standard response codes and clients may not know which requests are idempotent hampering failure recovery of some requests."
+RPC API,Integration,,Integration,Max,2,APIs provide a well-defined interface for component integration.
+RPC API,Interoperability,,Integration,Max,2.5,APIs provide a well-defined interface for component interoperability.
+Tuple-Space Partitioning,Agility,,Module Partitioning,Arithmetic,2,
+RPC API,Elasticity,,Integration,Max,0.5,Networked API calls may be routed to multiple available endpoints improving potential elasticity.
+RPC API,Performance,,Integration,Max,0.5,RPC endpoints are generally highly specific which enables some optimizations. Although coupling is often increased as a trade-off.
+RPC API,Scalability,,Integration,Max,0.5,Network APIs improve overall system scalability slightly.
+RPC API,Abstraction,,Integration,Max,1.5,The highly-specific nature of RPC endpoints reduces API abstraction.
+RPC API,Deployability,,Integration,Max,-1,The highly-coupled nature of RPC endpoints often require coordinated changes reducing overall deployability.
+RPC API,Evolvability,,Integration,Max,-1,The highly-coupled nature of RPC endpoints make changes more difficult.
+Medium Component Granularity,Cost,,Granularity,Average,-0.5,"Medium granularity of components reduces total cost of ownership in terms of development time, change time, and bandwidth costs but is offset by design, development, and compute overhead involved in a distributed system."
+SOAP API,Simplicity,,Integration,Max,1,"SOAP provides a standardized and uniform approach to web service communication, ensuring that developers follow a consistent protocol, which streamlines understanding and development."
+SOAP API,Integration,,Integration,Max,0.5,"With its strict standards and comprehensive specifications, SOAP facilitates straightforward integration between disparate systems through universally accepted conventions."
+SOAP API,Interoperability,,Integration,Max,0.5,"SOAP's platform-agnostic nature means systems built on different platforms can interact seamlessly, eliminating potential barriers arising from diverse software architectures."
+SOAP API,Abstraction,,Integration,Max,0.5,
+SOAP API,Configurability,,Integration,Max,-0.5,"The rigid standards that SOAP enforces can restrict customizability, limiting how developers can adapt the service to specific needs."
+SOAP API,Deployability,,Integration,Max,-0.5,"Due to SOAP's extensive and detailed XML-based messaging structure, deploying SOAP services may require additional tooling and resources, potentially complicating the deployment pipeline compared to more lightweight protocols."
+SOAP API,Performance,,Integration,Max,-0.5,"The weightiness of SOAP, largely due to its XML format, can lead to increased latency and slower processing times compared to more lightweight alternatives."
+SOAP API,Agility,,Integration,Max,-1,"Adhering to SOAP's stringent requirements can inhibit quick adaptations or rapid development, making it challenging to pivot in fast-evolving scenarios."
+SOAP API,Evolvability,,Integration,Max,-2,"While SOAP provides a solid foundation, its tight coupling to the WS-* specifications can hinder adaptation to newer architectural patterns and technological advancements."
+graphql API,Integration,Dominant,Integration,Max,2.5,
+graphql API,Interoperability,Dominant,Integration,Max,2.5,
+graphql API,Agility,,Integration,Max,1,
+graphql API,Abstraction,Dominant,Integration,Max,2,
+graphql API,Deployability,,Integration,Max,1.5,
+graphql API,Fault-tolerance,,Integration,Max,0.5,
+graphql API,Simplicity,,Integration,Max,1.5,
+graphql API,Testability,,Integration,Max,0.5,
+graphql API,Elasticity,,Integration,Max,0.5,
+graphql API,Performance,,Integration,Max,-0.75,
+gRPC API,Configurability,,Integration,Max,,
+gRPC API,Fault-tolerance,,Integration,Max,0.5,
+gRPC API,Integration,Dominant,Integration,Max,2,
+gRPC API,Interoperability,Dominant,Integration,Max,2,
+gRPC API,Cost,,Integration,Max,1.5,
+gRPC API,Elasticity,,Integration,Max,0.5,
+gRPC API,Performance,,Integration,Max,1,
+gRPC API,Scalability,,Integration,Max,0.5,
+gRPC API,Abstraction,,Integration,Max,1,
+gRPC API,Deployability,,Integration,Max,-1,
+gRPC API,Evolvability,,Integration,Max,-1,
+gRPC API,Agility,,Integration,Max,-0.5,
+Choreography Interactions,Integration,,Interaction,Average,2,"For effective asynchronous choreography, well defined event topics and schemas must be defined improving integration."
+Choreography Interactions,Interoperability,,Interaction,Average,2,"For effective asynchronous choreography, well defined event topics and schemas must be defined improving interoperability."
+Choreography Interactions,Configurability,,Interaction,Average,-0.5,
+Choreography Interactions,Abstraction,,Interaction,Average,1,
+Choreography Interactions,Agility,,Interaction,Average,-1,End-to-end testing and topology changes are both difficult reducing agility.
+Choreography Interactions,Deployability,,Interaction,Average,-0.5,The async nature and difficult of testing introduce complexity to deployments
+Choreography Interactions,Fault-tolerance,,Interaction,Average,-0.5,"Choreography generally works well when following the happy-path, however error states, partial failures, and retry will become more challenging introducing potential new unmanaged failure conditions."
+Choreography Interactions,Performance,,Interaction,Average,3,
+Choreography Interactions,Elasticity,,Interaction,Average,,"Choreographed interactions can enhance the elasticity of a system by promoting decentralized decision-making, reducing bottlenecks, and supporting event-driven, asynchronous operations."
+Choreography Interactions,Testability,,Interaction,Average,-1.5,
+Choreography Interactions,Workflow,,Interaction,Average,1,
+Choreography Interactions,Cost,,Interaction,Average,1,"This constraint introduces complexity, monitoring, and consistency that increase operational cost. Also, licensing costs for an event broker may affect costs."
+ESB/Orchestration Engine,Abstraction,Dominant,Interaction,Average,5,"The orchestration engine abstracts the underlying service implementations, allowing developers to focus on defining business processes without concerning themselves with service-specific details. The orchestration engine often massages inter-service communication."
+ESB/Orchestration Engine,Integration,,Interaction,Average,5,"Orchestration engines provide a central hub for integrating different services, streamlining the process of connecting and coordinating multiple disparate systems."
+ESB/Orchestration Engine,Interoperability,,Interaction,Average,5,"With standardized protocols and adapters, an ESB ensures that services built on different platforms or technologies can communicate and work together seamlessly."
+ESB/Orchestration Engine,Workflow,,Interaction,Average,5,"The orchestration engine can define, manage, and execute complex business processes by coordinating multiple services in a predefined workflow."
+ESB/Orchestration Engine,Elasticity,,Interaction,Average,3.5,Orchestration engines  can handle varying loads by dynamically allocating resources or routing messages to different service instances as needed.
+ESB/Orchestration Engine,Configurability,,Interaction,Average,2,"Through an orchestration engine, routing rules, message transformations, and other integration patterns may be configured without altering the actual services."
+ESB/Orchestration Engine,Scalability,,Interaction,Average,2.5,"Orchestration engines can distribute workloads across multiple instances, helping the system handle a large number of requests concurrently."
+ESB/Orchestration Engine,Fault-tolerance,,Interaction,Average,1,"Many orchestration engine solutions offer built-in mechanisms for error handling, message redelivery, and failover to ensure system reliability even when individual services fail."
+ESB/Orchestration Engine,Performance,,Interaction,Average,-0.5,
+ESB/Orchestration Engine,Simplicity,,Interaction,Average,-1,"The introduction of an orchestration engine adds an additional layer of complexity, making the system harder to understand and manage."
+ESB/Orchestration Engine,Testability,,Interaction,Average,-1.5,"Testing a system reliant on an orchestration engine can be challenging due to the intertwined nature of services, making it difficult to test services in isolation."
+ESB/Orchestration Engine,Agility,,Interaction,Average,-2,"As the orchestration engine becomes a central point of control, it can introduce bureaucratic bottlenecks, slowing down the ability to adapt and make changes."
+ESB/Orchestration Engine,Cost,,Interaction,Average,-2.5,"Implementing and maintaining an orchestration engine solution can be expensive, both in terms of licensing costs for commercial products and the operational overhead."
+ESB/Orchestration Engine,Evolvability,,Interaction,Average,-2,"Over-reliance on the orchestration engine can lead to rigid architectures that are hard to evolve, especially when business processes change or when trying to adopt newer technological paradigms."
+Orchestration-Driven Interactions,Workflow,,Interaction,Average,3.5,"Orchestration-driven interactions provide a centralized control mechanism, ensuring a clear and deterministic workflow, and facilitating coordination across different services."
+Orchestration-Driven Interactions,Integration,,Interaction,Average,2,"With a centralized orchestrator guiding the process, integration of various services becomes more streamlined, ensuring that interactions follow a predefined path."
+Orchestration-Driven Interactions,Interoperability,,Interaction,Average,2,"The orchestrator can be designed to handle interactions between services built on different platforms or technologies, acting as a mediator to ensure smooth communication."
+Orchestration-Driven Interactions,Abstraction,,Interaction,Average,2.5,"The orchestrator abstracts the underlying complexities of service interactions, providing a unified interface for managing different services."
+Orchestration-Driven Interactions,Configurability,,Interaction,Average,1,"Centralized orchestration allows for easier configuration of workflow processes and service interactions, as changes can be made in one place."
+Orchestration-Driven Interactions,Cost,,Interaction,Average,-1.5,"Setting up and maintaining an orchestration engine can be expensive, both in terms of infrastructure and the expertise required."
+Orchestration-Driven Interactions,Elasticity,,Interaction,Average,-1,"A centralized orchestrator can become a bottleneck, potentially hindering the system's ability to expand and contract based on demand."
+Orchestration-Driven Interactions,Agility,,Interaction,Average,-2,"Changes or innovations might be slower since they may require modifications to the orchestrator, rather than just the affected services."
+Orchestration-Driven Interactions,Scalability,,Interaction,Average,-1.5,"As the number of services grows, the orchestrator can become a choke point, making it challenging to scale the system efficiently."
+Orchestration-Driven Interactions,Simplicity,,Interaction,Average,-2,"While the orchestrator might simplify some aspects of the architecture, it introduces new complexities, particularly in terms of managing and maintaining the orchestration logic."
+Orchestration-Driven Interactions,Testability,,Interaction,Average,-2.5,esting the system might be more complex since tests have to consider the orchestrator's behavior and the possible paths of interaction it dictates.
+Orchestration-Driven Interactions,Deployability,,Interaction,Average,-3,"Deployment can be more challenging due to potential dependencies on the orchestrator, affecting the independence of deploying individual services."
+Orchestration-Driven Interactions,Evolvability,,Interaction,Average,-3,"As business needs change, the central orchestrator might require significant modifications, making the architecture less adaptable over time."
+Orchestration-Driven Interactions,Fault-tolerance,,Interaction,Average,-1,"If the orchestrator fails, it can disrupt the entire system, as it is a single point of failure. Likewise, partial falures in distributed systems can be difficult to retry/rollback."
+Orchestration-Driven Interactions,Performance,,Interaction,Average,-0.5,"The orchestrator can introduce additional latency in the system, especially if it becomes a bottleneck, affecting the overall responsiveness and throughput of the architecture."
+Plug-in Architecture,Configurability,,Interface,Arithmetic,3,"This constraint provides the system with a high degree of configurability. At a high level, the functions of the system are defined by composition of user-selected plugins. Plugins typically offer their own configuratibility options as well."
+Plug-in Architecture,Fault-tolerance,,Interface,Arithmetic,0.5,This constraint introduces natural bulkheads in the system. An unhealthy or otherwise malfunctioning plugin can quickly be identified by the core system and isolated or disabled. Fault tolerance can be improved on diminished based on other architecture constraints.
+Plug-in Architecture,Abstraction,,Interface,Arithmetic,2,"The nature of prescribed module boundaries, grammars, and APIs provide a stable abstraction between the core system and plugins. This abstraction generally makes for safer changes because the nature of this constraint makes it difficult for changes to bleed into the public interface of any given plugin."
+Plug-in Architecture,Workflow,,Interface,Arithmetic,3,A workflow capability may be introduced through combination and orchestration of plugins. Care must be taken to maintain fault-tolerance as well as runtime dependency management.
+Plug-in Architecture,Agility,,Interface,Arithmetic,1.5,"Agility is improved as the module boundaries, prescribed grammars, and core-system APIs are stable and well defined. Enhancements to a plugin generally do not bleed through to the boundaries, constraining changes within the black-box of the plugin. Likewise delivering new functionality is typically as simple as developing a new, relatively small, plugin. This constraint, therefore, enables developers (and, by extension, business) to respond to change quicker. The core system and plugins may independently evolve."
+Plug-in Architecture,Evolvability,,Interface,Arithmetic,1,"With this constraint, changes to the system are as simple as creating a new plugin or modifying and existing one. The composable nature of plugins also results is a system that can continually be extended in unexpected ways after deployment."
+Plug-in Architecture,Integration,,Interface,Arithmetic,1.5,"This constraint prescribes interfaces, grammars, and API interaction. As long as these are stable, the overall capability of integration is improved."
+Plug-in Architecture,Interoperability,,Interface,Arithmetic,1.5,Interoperability is similarly improved alongside integration due to the prescriptive and opinionated interfaces.
+Plug-in Architecture,Cost,,Interface,Arithmetic,1,"Total cost of ownership is improved by this constraint. Cost of change is generally constrained and new capabilities can originate from the core-system maintainer, 3rd party developers, or the open-source community."
+Plug-in Architecture,Performance,,Interface,Arithmetic,2.5,"This constraint suggests code modules that locally extend the core system. When contrasted with calls to external modules over the network, executing code within a plugin doesn't require TCP overhead, network latency, or suffer from bandwidth issues. The improvement is modest, as performance is constrained by the hardware running the core system and plugin."
+Plug-in Architecture,Testability,,Interface,Arithmetic,0.5,This constraint is very prescriptive on module boundaries and constrains interactions. Functional testing scope becomes better defined as a consequence and integration testing scope is fairly constrained.
+Plug-in Architecture,Deployability,,Interface,Arithmetic,1.5,Deployability is improved as plugins follow a clear deployment process that is generally low-risk. A component registry may add up-front complexity to this constraint.
+Plug-in Architecture,Simplicity,,Interface,Arithmetic,-1,The necessary development of module grammars and stable APIs is non-trivial. Likewise the infrastructure for managing plugins at runtime also introduces some complexity.
+Uniform Interface,Abstraction,Dominant,Interface,Arithmetic,3,"Interfaces, APIs, and grammars abstract implementation logic from integration logic significantly improving the abstraction of components in the system."
+Uniform Interface,Cost,,Interface,Arithmetic,2,"With this constraint, and its related abstraction, change scope is reduced, integration cost is reduced, deployment cost is reduced."
+Uniform Interface,Integration,,Interface,Arithmetic,2.5,"This constraint prescribes a comprehensive standardized interface for interaction. As long as this are stable, the overall capability of integration is improved."
+Uniform Interface,Interoperability,,Interface,Arithmetic,2.5,Interoperability is similarly improved alongside integration due to abstraction and the prescriptive and opinionated  interfaces.
+Uniform Interface,Agility,,Interface,Arithmetic,1,"In the same manner that this constraint improves TCO (including long-term development and maintenance costs), change cost and risk are reduced which improves release velocity. This capability is tempered somewhat by the overhead of writing code to interact with a uniform interface (and the development and maintenance of the interface in the first place). Also, once these interfaces are defined they become difficult to change, reducing some of the agility advantage of this constraint."
+Uniform Interface,Evolvability,,Interface,Arithmetic,0.5,"Implementations are decoupled from the functions they expose, which encourages independent evolvability."
+Uniform Interface,Simplicity,,Interface,Arithmetic,1.5,"By applying the software engineering principle of generality to the component interface, the overall system architecture is simplified."
+Uniform Interface,Fault-tolerance,,Interface,Arithmetic,0.5,"A uniform interface not only constrains how components interact happy path, but also how error states are communicated. Visibility of success and failure, health and malfunction are thus clearer across component boundaries and the system may adapt as necessary without intimate knowledge of component internals."
+Uniform Interface,Performance,,Interface,Arithmetic,-0.5,Testability is modestly improved due to the limited integration test scope and due to the abstraction this constraint provides.
+Domain Partitioning,Agility,,Module Partitioning,Arithmetic,2.5,"This constraint improves business agility as many changes to a software system can be scoped to a single domain or bounded context which results in most changes being scoped to a single module which reduces testing scope, regression surface area, and changes typically require less coordination overhead. Change cost, risk, and complexity is lowered resulting in potential increased change velocity."
+Domain Partitioning,Evolvability,,Module Partitioning,Arithmetic,2.5,"Changes to existing modules are heavily scoped to the domain boundaries or bounded context, which results in code that is easier to modify. Introducing significant areas of new functionality are often as simple as introducing new modules. In a monolithic architecture, domain-partioned systems are usually fairly easy to decompose providing additional evolvability towards more distributed architectures in the future."
+Domain Partitioning,Integration,,Module Partitioning,Arithmetic,1,
+Domain Partitioning,Deployability,,Module Partitioning,Arithmetic,2,Deployment risk of domain-partitioned architectures is generally much lower given the highly-modular nature of systems introducing this constraint.
+Domain Partitioning,Testability,,Module Partitioning,Arithmetic,1.5,"As explained above, testing scope and regression surface area are constrained, resulting in improved testability."
+Domain Partitioning,Abstraction,,Module Partitioning,Arithmetic,0.5,
+Domain Partitioning,Fault-tolerance,,Module Partitioning,Arithmetic,1,Domain partitioning often reduces the blast radius of failures to a single domain or bounded context. This capability is modified by other architecture constraints.
+Domain Partitioning,Simplicity,,Module Partitioning,Arithmetic,0.5,"By modeling the architecture of the system to mirror the business domain, simplicity is slightly improved. In terms of system components, the language of the business begins to match the language of the developers. Communication is improved, ownership of any area <p>Simplicity is only marginally improved, however, as building a domain-partitioned system requires first defining and documenting the various domains and their relationships. This is generally a long and difficult process (but, often, the reward is worth the effort). To add to this complexity, the organizational structure must be modified to mirror the domain structure. <a href=""https://en.wikipedia.org/wiki/Conway%27s_law"">Conway's Law</a> has repeatedly shown that the deployed system will mirror the organizational structure.is clearer, and overall maintainability of the system is improved.</p>"
+Domain Partitioning,Cost,,Module Partitioning,Arithmetic,0.5,"To apply the domain-partitioning constraint, DDD ceremonies must be performed. These ceremonies are always time-consuming costly, thus this constraint introduces cost trade-offs."
+All Data stored in-memory,Cost,,Component Constraint,Arithmetic,-0.5,This constraint introduces high-resource utilization and increased baseline resource requirements. This also typically results in more overall compute resources necessary to run the system at all times.
+Decoupled Database,Configurability,,Persistence,Arithmetic,0.5,
+Decoupled Database,Performance,,Persistence,Arithmetic,2,Removing the database as an application bottleneck improves performance at the cost of eventual consistency.
+Decoupled Database,Deployability,,Persistence,Arithmetic,1,Decoupling the application and database simplifies deployments in many scenarios.
+Decoupled Database,Scalability,,Persistence,Arithmetic,2,It will be easier to scale database hardware without impacting running applications when the two are decoupled.
+High Operational Automation,Cost,,Environment,Arithmetic,-0.5,"This constraint introduces increased operational cost, development investment, and potential licensing costs for operational middleware."
+Decoupled Database,Elasticity,,Persistence,Arithmetic,2,Decoupling the database from running applications increases elasticy of the overall system.
+Decoupled Database,Evolvability,,Persistence,Arithmetic,2,Evolutationary changes are easier with the inherent decoupling of this contstraint.
+Decoupled Database,Fault-tolerance,,Persistence,Arithmetic,-0.5,Availability interuptions of a decoupled database have less impact on the overall system.
+Decoupled Database,Simplicity,,Persistence,Arithmetic,-1,This constraint introduces additional operational complexity along with the challenges inherent to eventual consistency.
+Federated/Distributed Databases,Fault-tolerance,,Persistence,Average,1.5,"While a database is a single point of failure, this constraint reduces the scope of a failure to, typically, a single client application."
+Federated/Distributed Databases,Evolvability,,Persistence,Average,1.5,"With reduced change cost and risk, changes are easier to adopt with fewer risks to other system components."
+Federated/Distributed Databases,Performance,,Persistence,Average,0.5,Database resources are dedicated to a single client application improving overall performance.
+Federated/Distributed Databases,Scalability,,Persistence,Average,1.5,Federated databases are easier to scale due to reduced data and limited impact.
+Federated/Distributed Databases,Agility,,Persistence,Average,1,"Federated databases reduce change scope and coordination cost, improving agility and change velocity."
+Federated/Distributed Databases,Deployability,,Persistence,Average,1.5,Changes are generally easier to deploy as coordination cost is greatly reduced with federated database.
+Federated/Distributed Databases,Testability,,Persistence,Average,0.5,"Testing scope is generally reduced as only one application generally has access to a given database, reducing the possibility of schema changes breaking other applications."
+Federated/Distributed Databases,Configurability,,Persistence,Average,,This constraint allows databases to be individually tuned and configured without impacting other databases in the system.
+Federated/Distributed Databases,Elasticity,,Persistence,Average,,"Databases, even distributed databases, are difficult to scale on demand."
+Federated/Distributed Databases,Integration,,Persistence,Average,-0.5,"With federated/distributed databases, data must be partitioned somehow which introduces integration overhead often in the form of application side joins."
+Federated/Distributed Databases,Simplicity,,Persistence,Average,-1,Splitting databases is generally quite difficult also many database introduces management overhead.
+Federated/Distributed Databases,Cost,,Persistence,Average,-1,"Multiple databases increases operational cost, administration cost, and potentially license cost"
+Partitioned Shared Database,Agility,,Persistence,Average,,"The team responsible for any given module of the system also have full control, ownership, and autonomy over the module's respective database partition. The coordination cost associated with database changes is effectively eliminated and regression surface area is materially reduced. Consequently change scope, cost, and risk are reduced which increases velocity and the business's ability to respond quickly to change."
+Partitioned Shared Database,Cost,,Persistence,Average,1.5,"Generally sharing a single, shared database reduces licensing costs, hosting costs, and reduces development costs. Generally this also reduces data storage redundancy as there is much less need to replicate data to be visible to other application components. Cost-of-change is generally improved due to the reduced coordination cost this constraint provides."
+Partitioned Shared Database,Security,,Persistence,Average,1,The ability to easily reduce raw database access to a single partition reduces risk associated with a breach and shrink's the system's attack surface area.
+Partitioned Shared Database,Deployability,,Persistence,Average,0.25,"Because coordination cost, change scope, and risk are reduced; deployment risk shrinks."
+Partitioned Shared Database,Evolvability,,Persistence,Average,,The reduced coordination cost and testing scope of a system with a database with clear boundaries slightly improves evolvability.
+Partitioned Shared Database,Fault-tolerance,,Persistence,Average,1.5,"A single database becomes a single point-of-failure. Although most database management systems bring high-availability configuration options, if one database (the only database) is unavailable, the entire system is unavailable."
+Partitioned Shared Database,Scalability,,Persistence,Average,-0.5,"Databases are notoriously difficult to scale. Multiple databases responsible for different parts of the data provide some level of parallelism and increase total capacity, a single database may be limited to scaling up."
+Partitioned Shared Database,Simplicity,,Persistence,Average,-0.5,"Although administration is simplified by virtue of having a single database to manage, defining and managing partitions requires additional effort at design time and runtime."
+Partitioned Shared Database,Elasticity,,Persistence,Average,-2,"As a single, shared resource, the system as a whole becomes less elastic because there is a ceiling to the single database’s capacity."
+Shared Database,Cost,,Persistence,Average,2,"Generally sharing a single, shared database reduces licensing costs, hosting costs, and reduces development costs. Generally this also reduces data storage redundancy as there is much less need to replicate data to be visible to other application components."
+Shared Database,Simplicity,,Persistence,Average,1,Administration is simplified by virtue of having a single database to manage. Design is also simplified as all data modeling can be done at the application level rather than domain level.
+Shared Database,Performance,,Persistence,Average,0.5,
+Shared Database,Deployability,,Persistence,Average,-0.5,"Deployment is generally straightforward as changes to a single database have reduced coordination costs. The improvement is modest, however, as DB changes at this scale can affect availability and introduce risk if schema that other components rely on change."
+Shared Database,Configurability,,Persistence,Average,-0.5,Configurability is reduced as any changes must be applied system-wide. A one-size-fits-all approach is generally required under this constraint.
+Shared Database,Fault-tolerance,,Persistence,Average,1.5,"A single database becomes a single point-of-failure. Although most database management systems bring high-availability configuration options, if one database (the only database) is unavailable, the entire system is unavailable."
+Shared Database,Scalability,,Persistence,Average,-0.5,"Databases are notoriously difficult to scale. Multiple databases responsible for different parts of the data provide some level of parallelism and increase total capacity, a single database may be limited to scaling up."
+Shared Database,Abstraction,,Persistence,Average,-1,
+Shared Database,Agility,,Persistence,Average,-0.5,"Database changes potentially require coordinating with all teams and must be regression tested across all components. It can be very difficult to tell which teams are using various tables. Consequently, any change introduces risk which reduces change velocity."
+Shared Database,Evolvability,,Persistence,Average,-1,The high coordination cost and testing scope also degrades evolvability.
+Shared Database,Elasticity,,Persistence,Average,-2,"As a single, shared resource, the system as a whole becomes less elastic because there is a ceiling to the single database’s capacity."
+Generic Services,Scalability,,Scope,Arithmetic,,"Even at a coarse granularity, components may be individually scaled increasing total available compute where it is most needed."
+Generic Services,Fault-tolerance,,Scope,Arithmetic,-1.5,"The high degree of reuse prescribed in this constraint introduces many failure points, each with unknown blast radius"
+Generic Services,Performance,,Scope,Arithmetic,0.5,Functionality is usually achieved through composition of various services. This network coordination reduces performance.
+Generic Services,Configurability,,Scope,Arithmetic,-1,"Services are to be as generic as possible, configuration is difficult without affecting other consumers."
+Generic Services,Cost,,Scope,Arithmetic,-1.5,"Despite the savings a high degree of reuse was hoped to engender, the resulting maintenance and change costs are very high which more than offsets any cost saving associated with reuse."
+Generic Services,Simplicity,,Scope,Arithmetic,-1,"Building generic services is difficult, and often expensive middleware is necessary to coordinate behavior and composition."
+Generic Services,Testability,,Scope,Arithmetic,-1.5,The generic nature of these services make testing difficult.
+Generic Services,Agility,,Scope,Arithmetic,-2,The impact of any change has potentially far-reaching consequences. Agility for this constraint is very low.
+Generic Services,Evolvability,,Scope,Arithmetic,-2,Business logic changes often require coordination across many generic services degrading overall system evolvability.
+Replicated Shared Data Grid,Integration,,Synchronization,Arithmetic,,"The replicated shared data grid facilitates consistent data sharing and access across various components, simplifying the process of integrating disparate system elements."
+RPC API,Cost,,Integration,Max,1.5,"APIs, even RPC APIs (which are often tightly coupled) standardize on an interface which reduces development and maintenance costs."
+Replicated Shared Data Grid,Abstraction,,Synchronization,Arithmetic,-0.5,"This constraint requires well-defined data schemas and integration contracts, improving overall component interoperability."
+Replicated Shared Data Grid,Deployability,,Synchronization,Arithmetic,1.5,"The replicated, shared data grid operates independantly of any running instances. This improves deployability in some situations supporting incremental deployments rather than full shutdowns and cold starts."
+Replicated Shared Data Grid,Elasticity,,Synchronization,Arithmetic,1.5,
+Replicated Shared Data Grid,Evolvability,,Synchronization,Arithmetic,0.5,Evolvability is improved as the shared data grid infrastructure may be extended to additional tuple spaces as well as supporting partial deployments to reduce change costs.
+Replicated Shared Data Grid,Configurability,,Synchronization,Arithmetic,0.5,
+Replicated Shared Data Grid,Fault-tolerance,,Synchronization,Arithmetic,1.25,"This constraint introduces new potential failure conditions including, replication errors, collisions, and race conditions that may be difficult to contain and mitigate."
+Replicated Shared Data Grid,Testability,,Synchronization,Arithmetic,-2.5,
+Decoupled Database,Cost,,Persistence,Arithmetic,1.5,"Decoupling the database from running applications reduces compute costs, licensing costs, and may run on lower-resource hardware."
+Event-sourcing,Cost,,Synchronization,Arithmetic,-1,
+Event-sourcing,Performance,,Synchronization,Arithmetic,1.5,
+Event-sourcing,Integration,,Synchronization,Arithmetic,1.5,
+Event-sourcing,Interoperability,,Synchronization,Arithmetic,2,
+Event-sourcing,Workflow,,Synchronization,Arithmetic,,
+Event-sourcing,Abstraction,,Synchronization,Arithmetic,0.5,
+Event-sourcing,Evolvability,,Synchronization,Arithmetic,2,
+Event-sourcing,Fault-tolerance,,Synchronization,Arithmetic,1.5,
+Event-sourcing,Scalability,,Synchronization,Arithmetic,0.5,
+Event-sourcing,Configurability,,Synchronization,Arithmetic,1,
+Event-sourcing,Elasticity,,Synchronization,Arithmetic,,
+Event-sourcing,Agility,,Synchronization,Arithmetic,,
+Event-sourcing,Simplicity,,Synchronization,Arithmetic,-2,
+Event-sourcing,Testability,,Synchronization,Arithmetic,0.5,
+CQRS,Cost,,Synchronization,Arithmetic,-1,
+CQRS,Performance,,Synchronization,Arithmetic,1.5,
+CQRS,Integration,,Synchronization,Arithmetic,0.5,
+CQRS,Interoperability,,Synchronization,Arithmetic,,
+CQRS,Workflow,,Synchronization,Arithmetic,,
+CQRS,Abstraction,,Synchronization,Arithmetic,,
+CQRS,Evolvability,,Synchronization,Arithmetic,0.5,
+CQRS,Fault-tolerance,,Synchronization,Arithmetic,1,
+CQRS,Scalability,,Synchronization,Arithmetic,0.5,
+CQRS,Configurability,,Synchronization,Arithmetic,,
+CQRS,Elasticity,,Synchronization,Arithmetic,0.5,
+CQRS,Agility,,Synchronization,Arithmetic,0.5,
+CQRS,Simplicity,,Synchronization,Arithmetic,-1,
+CQRS,Testability,,Synchronization,Arithmetic,-0.5,
+Layered System,Abstraction,,Topology,Arithmetic,2,"Layers, particularly ""closed"" layers, improve abstraction as a layer can be used to encapsulate legacy services and to protect new services from legacy clients. A layer facade to a legacy system, or an API layer provides some degree of abstraction within the system."
+Layered System,Evolvability,,Topology,Arithmetic,2,Layers may often be evolved indpendently (depending on overall coupling).
+Layered System,Simplicity,,Topology,Arithmetic,0.5,"""Closed"" layers restrict knowledge of the system to a single layer which limits overall system complexity."
+Layered System,Agility,,Topology,Arithmetic,,The ability to abstract legacy systems combined with the innate composibility of layers slightly improve overall agility
+Layered System,Elasticity,,Topology,Arithmetic,0.5,
+Layered System,Deployability,,Topology,Arithmetic,1,"Decomposing a system into layered components with abstractions in the form of APIs or facades enable each layer to be independently deployed, slightly improving overall deployablity of the system."
+Layered System,Fault-tolerance,,Topology,Arithmetic,,Separate layers may modestly improve fault-tolerance when deployed in a high-availablity fashioned.
+Layered System,Interoperability,,Topology,Arithmetic,0.5,This constraints potential for component abstraction and encapsulation operates as a forcing function towards improved interoperability. The gain from this constraint is modest but improved by additional constraints that ensure reduced coupling.
+Layered System,Testability,,Topology,Arithmetic,-0.5,"Although each layer introduces reduced testing scope, end-to-end testing of the system is often required and more difficult under this constraint. Furthermore, layers encapsulating legacy or external systems may be more difficult to test in isolation."
+Layered System,Performance,,Topology,Arithmetic,-1,"A disadvantage of layered systems is that they add overhead and latency to the processing of data and communication between layers, reducing performance."
+Layered System,Configurability,,Topology,Arithmetic,1,
+Layered System,Cost,,Topology,Arithmetic,-2.5,Decomposing the system into layers increases operational costs requiring more compute instances for each layer and potentially introducing bandwidth costs.
+Replicated Shared Data Grid,Cost,,Synchronization,Arithmetic,-0.5,The operational costs and licensing costs of products that implement this data grid can be quite high.
+Tuple-Space Partitioning,Configurability,,Module Partitioning,Arithmetic,-1,
+Tuple-Space Partitioning,Evolvability,,Module Partitioning,Arithmetic,0.5,
+Tuple-Space Partitioning,Integration,,Module Partitioning,Arithmetic,1,
+Tuple-Space Partitioning,Deployability,,Module Partitioning,Arithmetic,,
+Tuple-Space Partitioning,Testability,,Module Partitioning,Arithmetic,1.5,
+Tuple-Space Partitioning,Abstraction,,Module Partitioning,Arithmetic,,
+Tuple-Space Partitioning,Fault-tolerance,,Module Partitioning,Arithmetic,0.5,
+Tuple-Space Partitioning,Simplicity,,Module Partitioning,Arithmetic,0.5,
+Tuple-Space Partitioning,Cost,,Module Partitioning,Arithmetic,1,

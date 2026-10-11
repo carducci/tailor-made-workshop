@@ -1,0 +1,63 @@
+style,constraint
+Layered Monolith,Monolithic Component Granularity
+Layered Monolith,Separation of Concerns
+Layered Monolith,Technical Partitioning
+Layered Monolith,Shared Database
+Microkernel,Mixed (Core Monolith/fine plugins)
+Microkernel,Independent Deployability
+Microkernel,Shared Database
+Microkernel,Separation of Concerns
+Microkernel,Plug-in Architecture
+Microkernel,Uniform Interface
+Modular Monolith,Monolithic Component Granularity
+Modular Monolith,Domain Partitioning
+Modular Monolith,Partitioned Shared Database
+Modular Monolith,Separation of Concerns
+N-Tier,Coarse Component Granularity
+N-Tier,Independent Deployability
+N-Tier,Technical Partitioning
+N-Tier,Shared Database
+N-Tier,Separation of Concerns
+N-Tier,Client-Server
+N-Tier,Layered System
+N-Tier,RPC API
+Service-Based,Independent Deployability
+Service-Based,Domain Partitioning
+Service-Based,Shared Database
+Service-Based,RPC API
+Service-Based,Medium Component Granularity
+Service-Based,Client-Server
+Choreographed Event-Driven,Fine Component Granularity
+Choreographed Event-Driven,Independent Deployability
+Choreographed Event-Driven,Technical Partitioning
+Choreographed Event-Driven,Pub-Sub Messaging
+Choreographed Event-Driven,Federated/Distributed Databases
+Choreographed Event-Driven,Choreography Interactions
+Choreographed Event-Driven,High Operational Automation
+Orchestrated Event-Driven,Fine Component Granularity
+Orchestrated Event-Driven,Independent Deployability
+Orchestrated Event-Driven,Technical Partitioning
+Orchestrated Event-Driven,Persistent-Queue Messaging
+Orchestrated Event-Driven,Federated/Distributed Databases
+Orchestrated Event-Driven,Orchestration-Driven Interactions
+Microservices,Federated/Distributed Databases
+Microservices,Domain Partitioning
+Microservices,Fine Component Granularity
+Microservices,RPC API
+Microservices,Independent Deployability
+Microservices,High Operational Automation
+Microservices,Highly Decoupled Components
+Microservices,Client-Server
+Space-Based,Tuple-Space Partitioning
+Space-Based,High Operational Automation
+Space-Based,All Data stored in-memory
+Space-Based,Replicated Shared Data Grid
+Space-Based,Decoupled Database
+Space-Based,Medium Component Granularity
+Space-Based,RPC API
+Orchestration-Driven Service Oriented Architecture,Coarse Component Granularity
+Orchestration-Driven Service Oriented Architecture,Shared Database
+Orchestration-Driven Service Oriented Architecture,Technical Partitioning
+Orchestration-Driven Service Oriented Architecture,ESB/Orchestration Engine
+Orchestration-Driven Service Oriented Architecture,SOAP API
+Orchestration-Driven Service Oriented Architecture,Generic Services

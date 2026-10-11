@@ -1,0 +1,41 @@
+constraint,class
+Persistent-Queue Messaging,Async Communication
+Pub-Sub Messaging,Async Communication
+Queue Messaging,Async Communication
+Replicated Shared Data Grid,Async Communication
+All Data stored in-memory,Component Constraint
+Highly Decoupled Components,Component Constraint
+Near-Cache for in-memory overflow,Component Constraint
+Separation of Concerns,Component Constraint
+Independent Deployability,Deployment Constraint
+High Operational Automation,Environment
+Microfrontend,front-end
+Tightly-Coupled Client-Server,front-end
+Mixed (Core Monolith/fine plugins),Granularity
+Coarse Component Granularity,Granularity
+Fine Component Granularity,Granularity
+Medium Component Granularity,Granularity
+Monolithic Component Granularity,Granularity
+graphql API,Integration
+gRPC API,Integration
+Level 1 REST API,Integration
+Level 2 REST API,Integration
+RPC API,Integration
+SOAP API,Integration
+Choreography Interactions,Interaction
+ESB/Orchestration Engine,Interaction
+Orchestration-Driven Interactions,Interaction
+Plug-in Architecture,Interface
+Uniform Interface,Interface
+Domain Partitioning,Module Partitioning
+Technical Partitioning,Module Partitioning
+Tuple-Space Partitioning,Module Partitioning
+Decoupled Database,Persistence
+Federated/Distributed Databases,Persistence
+Partitioned Shared Database,Persistence
+Shared Database,Persistence
+Generic Services,Scope/Reusability
+CQRS,Synchronization
+Event-sourcing,Synchronization
+Client-Server,Topology
+Layered System,Topology
